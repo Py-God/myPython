@@ -1,0 +1,53 @@
+First set of code
+-------------------------------------------
+- import time - this module is used to import the actual time from your pc to use in the program
+- time.sleep() - this is used to halt the excution of the program for a few seconds. it is a fun way to put the user of
+  the program in suspense 
+
+Second set of code
+-------------------------------------------
+- We defined the main function that initializes the arguements.
+  and set all those variables as global so we can use them in all our functions
+- random.choice() - used in picking a random element from a specified sequence. either a string, range, list, tuple or anything
+
+Third set of code
+-------------------------------------------
+- exit() function can be used to end a code instead of having to import sys module
+
+Fourth set of code
+-------------------------------------------
+- when having a function. and you have a forloop that is supposed to restart the function if a criteria isnt met
+  just call the function wherever you want it restart, instead of trying to use the 'continue' statement
+- extend method for a list is used to add a list to another list (sort of like concatenating) 
+- find() method is called on a string or string variable and its parameter is another string or string variable. it will
+  return the index of that particular string.
+	e.g	word = 'Salad'
+		guess = 'l'
+		index = word.find(guess)
+		index
+		2
+
+					SUMMARY
+--------------------------------------------------------------------------------------------
+- proper planning to how your code would work, your individual functions and variables is very much needed to replicate such a code
+- import the modules you think you'd need: this can be done at any point in the project though
+
+- started with the intro of the game: asking for your name and all that.
+- set all the needed variables to global in the main function: notice it wasnt done outside the function (im sure for a clean code)
+- defined all the variables and some other variable that would be needed not in a global scope
+
+- started with the call to play as a while loop: as any game should
+- if you want to play, it calls a function that initializes play (strange how it was main that was called not hangman. both work equally if interchanged though). if not exits.
+
+- the hangman function:
+	~ sets a limit to the amount of guesses you have 
+	~ writes a code to check if you guessed a word or letter. and a code to strip any whitespace characters off your guess 
+	~ Writes a code to find the index of the word you guessed in the word they gave you so it can be prepared for appending
+	~ writes a code to display your guessed word in the right space on the screen replacing the dash
+        ~ Also writes a code to remove your guessed word from the word varaible itself to make it easier to check if you won
+	~ writes a code that stores your guessed word in a list so itll be easy to check if you guessed the word again
+ 	~ writes code that displays the hangman on the screen if you guessed wrong
+	~ writes a code to check if you won.
+
+		Perfection!!!
+	

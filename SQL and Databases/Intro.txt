@@ -1,0 +1,34 @@
+- Data is used everywhere 
+- how is data stored?; in a database
+
+- Database is a program that helps store data and has functionalities for adding, modifing and querying that data
+
+- Relational database (a type of database): stores data in a table e.g excel spreadsheet
+- databases come with a query language to interact with the database. SQL is designed for accessing database
+
+
+- CREATE TABLE [tablename] (id INTEGER PRIMARY KEY, );
+- we always need unique ids for each row in a database id INTEGER PRIMARY KEY signals to the database that each row must have a unique identifier
+
+- to add values to a database table use
+INSERT INTO [tablename] VALUES (idValue, nameValue, quantityValue); in that format
+
+
+- to form any query use 'SELECT'
+	SELECT [column name] FROM [tablename];
+	SELECT * FROM [tablename]; - to get all the column names
+	SELECT * FROM [tablename] ORDER BY [columnname]; - specifies what column you want to order by
+	SELECT * FROM [tablename] WHERE [columnname] > 5; - specifies what specific column name attributes you want
+
+- an aggregate function in SQL is useful in getting the maximun, minimum, sum etc of values in our database
+to use:
+	SELECT SUM(columnname) FROM [tablename]; - getting sum of an integer column
+	SELECT MAX(columnname) FROM [tablename]; - getting the max column integer 
+	SELECT [aggfunction](columnname) FROM [tablename] GROUP BY [columnname]; - getting how many items we will get in 	column name for repeating column names
+	SELECT [columnname], [aggfunction](columnname) FROM [tablename] GROUP BY [columnname];
+
+
+DATABASE TUTORIAL
+- A database is a program that allows for the storage and retrieval of data. Broadly speaking there are two types of databases: relational and non-relational.
+
+- The “id” column is what’s known as a primary key: a unique and non-null number that refers to each record. Every record/row in a relational table has a primary key.

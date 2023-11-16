@@ -1,0 +1,201 @@
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd Desktop\pages
+
+C:\Users\user\Desktop\pages>pipenv shell
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>mkdir templates
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>type nul > templates\home.html
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>type nul > pages\urls.py
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>py manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 04, 2022 - 23:50:06
+Django version 4.1, using settings 'pages_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[04/Aug/2022 23:52:01] "GET / HTTP/1.1" 200 17
+Not Found: /favicon.ico
+[04/Aug/2022 23:52:02] "GET /favicon.ico HTTP/1.1" 404 2277
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>type nul > templates\about.html
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>py manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 04, 2022 - 23:59:13
+Django version 4.1, using settings 'pages_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[04/Aug/2022 23:59:22] "GET /about HTTP/1.1" 301 0
+[04/Aug/2022 23:59:22] "GET /about/ HTTP/1.1" 200 20
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>type nul > templates\base.html
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>py manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 05, 2022 - 00:10:29
+Django version 4.1, using settings 'pages_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[05/Aug/2022 00:11:15] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:19] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:23] "GET /about/ HTTP/1.1" 200 94
+[05/Aug/2022 00:11:25] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:27] "GET /about/ HTTP/1.1" 200 94
+[05/Aug/2022 00:11:41] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:50] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:51] "GET /about/ HTTP/1.1" 200 94
+[05/Aug/2022 00:11:53] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:54] "GET /about/ HTTP/1.1" 200 94
+[05/Aug/2022 00:11:55] "GET / HTTP/1.1" 200 92
+[05/Aug/2022 00:11:55] "GET /about/ HTTP/1.1" 200 94
+[05/Aug/2022 00:12:11] "GET / HTTP/1.1" 200 92
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>python manage.py test
+Found 0 test(s).
+System check identified no issues (0 silenced).
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>python manage.py test
+Found 2 test(s).
+System check identified no issues (0 silenced).
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.029s
+
+OK
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git init
+Initialized empty Git repository in C:/Users/user/Desktop/pages/.git/
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Pipfile
+        Pipfile.lock
+        db.sqlite3
+        manage.py
+        pages/
+        pages_project/
+        templates/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git add -A
+warning: in the working copy of 'Pipfile', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Pipfile.lock', LF will be replaced by CRLF the next time Git touches it
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git commit -m 'initial commit'
+error: pathspec 'commit'' did not match any file(s) known to git
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git commit -m "initial commit"
+[master (root-commit) 13bb1a9] initial commit
+ 20 files changed, 321 insertions(+)
+ create mode 100644 Pipfile
+ create mode 100644 Pipfile.lock
+ create mode 100644 db.sqlite3
+ create mode 100644 manage.py
+ create mode 100644 pages/__init__.py
+ create mode 100644 pages/admin.py
+ create mode 100644 pages/apps.py
+ create mode 100644 pages/migrations/__init__.py
+ create mode 100644 pages/models.py
+ create mode 100644 pages/tests.py
+ create mode 100644 pages/urls.py
+ create mode 100644 pages/views.py
+ create mode 100644 pages_project/__init__.py
+ create mode 100644 pages_project/asgi.py
+ create mode 100644 pages_project/settings.py
+ create mode 100644 pages_project/urls.py
+ create mode 100644 pages_project/wsgi.py
+ create mode 100644 templates/about.html
+ create mode 100644 templates/base.html
+ create mode 100644 templates/home.html
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git remote add origin git@bitbucket.org:boluwatife_/pages-app.git
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git push -u origin master
+Enter passphrase for key 'C:/Users/user/.ssh/id_rsa':
+To bitbucket.org:boluwatife_/pages-app.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'bitbucket.org:boluwatife_/pages-app.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git fetch origin master
+Enter passphrase for key 'C:/Users/user/.ssh/id_rsa':
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 591 bytes | 2.00 KiB/s, done.
+From bitbucket.org:boluwatife_/pages-app
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git merge origin master
+merge: origin - not something we can merge
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git fetch origin master:tmp
+Enter passphrase for key 'C:/Users/user/.ssh/id_rsa':
+From bitbucket.org:boluwatife_/pages-app
+ * [new branch]      master     -> tmp
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git rebase tmp
+Successfully rebased and updated refs/heads/master.
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git push origin HEAD:master
+Enter passphrase for key 'C:/Users/user/.ssh/id_rsa':
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (23/23), 5.16 KiB | 352.00 KiB/s, done.
+Total 23 (delta 1), reused 0 (delta 0), pack-reused 0
+To bitbucket.org:boluwatife_/pages-app.git
+   13e3428..7250115  HEAD -> master
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>git branch -D tmp
+Deleted branch tmp (was 13e3428).
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>heroku login
+'heroku' is not recognized as an internal or external command,
+operable program or batch file.
+
+(pages-AW9FA6Xr) C:\Users\user\Desktop\pages>^S

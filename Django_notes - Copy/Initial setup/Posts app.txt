@@ -1,0 +1,170 @@
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd Desktop\mb
+
+C:\Users\user\Desktop\mb>pipenv shell
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>django-admin startproject mb_project .
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py startapp posts
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>type nul > posts\urls
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>type nul > posts\urls.py
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 06, 2022 - 01:32:30
+Django version 4.1, using settings 'mb_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[06/Aug/2022 01:32:33] "GET / HTTP/1.1" 200 10681
+[06/Aug/2022 01:32:33] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[06/Aug/2022 01:32:33] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[06/Aug/2022 01:32:33] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[06/Aug/2022 01:32:33] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+Not Found: /favicon.ico
+[06/Aug/2022 01:32:33] "GET /favicon.ico HTTP/1.1" 404 2114
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py makemigrations posts
+No changes detected in app 'posts'
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py makemigrations posts
+Migrations for 'posts':
+  posts\migrations\0001_initial.py
+    - Create model Post
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py migrate posts
+Operations to perform:
+  Apply all migrations: posts
+Running migrations:
+  Applying posts.0001_initial... OK
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py createsuperuser
+Username (leave blank to use 'user'): admin
+Email address: boluwatifelekeoduoye@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 06, 2022 - 01:51:27
+Django version 4.1, using settings 'mb_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[06/Aug/2022 01:51:31] "GET /admin/ HTTP/1.1" 302 0
+[06/Aug/2022 01:51:31] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2218
+[06/Aug/2022 01:51:31] "GET /static/admin/css/base.css HTTP/1.1" 200 20344
+[06/Aug/2022 01:51:31] "GET /static/admin/css/login.css HTTP/1.1" 200 958
+[06/Aug/2022 01:51:32] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 796
+[06/Aug/2022 01:51:32] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18854
+[06/Aug/2022 01:51:32] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2619
+[06/Aug/2022 01:51:32] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[06/Aug/2022 01:51:32] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3763
+[06/Aug/2022 01:51:32] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[06/Aug/2022 01:51:32] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[06/Aug/2022 01:51:57] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[06/Aug/2022 01:51:57] "GET /admin/ HTTP/1.1" 200 3580
+[06/Aug/2022 01:51:57] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+[06/Aug/2022 01:51:57] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[06/Aug/2022 01:51:57] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[06/Aug/2022 01:51:57] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+C:\Users\user\Desktop\mb\posts\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 06, 2022 - 01:53:27
+Django version 4.1, using settings 'mb_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[06/Aug/2022 01:53:39] "GET /admin/ HTTP/1.1" 200 4211
+[06/Aug/2022 01:53:47] "GET /admin/posts/post/ HTTP/1.1" 200 5352
+[06/Aug/2022 01:53:47] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[06/Aug/2022 01:53:47] "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+[06/Aug/2022 01:53:47] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+[06/Aug/2022 01:53:47] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[06/Aug/2022 01:53:47] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[06/Aug/2022 01:53:47] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6395
+[06/Aug/2022 01:53:47] "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+[06/Aug/2022 01:53:47] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[06/Aug/2022 01:53:47] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 288580
+[06/Aug/2022 01:53:47] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8919
+[06/Aug/2022 01:53:47] "GET /static/admin/js/filters.js HTTP/1.1" 200 966
+[06/Aug/2022 01:53:47] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[06/Aug/2022 01:53:58] "GET /admin/ HTTP/1.1" 200 4211
+[06/Aug/2022 01:54:00] "GET /admin/posts/post/add/ HTTP/1.1" 200 5979
+[06/Aug/2022 01:54:00] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[06/Aug/2022 01:54:00] "GET /static/admin/css/forms.css HTTP/1.1" 200 8944
+[06/Aug/2022 01:54:00] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[06/Aug/2022 01:54:00] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11297
+[06/Aug/2022 01:54:00] "GET /static/admin/js/change_form.js HTTP/1.1" 200 1043
+[06/Aug/2022 01:54:26] "POST /admin/posts/post/add/ HTTP/1.1" 302 0
+[06/Aug/2022 01:54:26] "GET /admin/posts/post/ HTTP/1.1" 200 6702
+[06/Aug/2022 01:54:26] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[06/Aug/2022 01:54:26] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[06/Aug/2022 01:54:26] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+C:\Users\user\Desktop\mb\posts\models.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 06, 2022 - 01:55:30
+Django version 4.1, using settings 'mb_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[06/Aug/2022 01:55:45] "GET /admin/posts/post/ HTTP/1.1" 200 6497
+[06/Aug/2022 01:55:45] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+[06/Aug/2022 01:55:45] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[06/Aug/2022 01:55:45] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>mkdir templates
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>type nul > templates\home.html
+
+(mb-W4tBHjP5) C:\Users\user\Desktop\mb>exit
+
+Aborted!
+
+C:\Users\user\Desktop\mb>

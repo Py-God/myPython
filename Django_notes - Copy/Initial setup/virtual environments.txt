@@ -1,0 +1,37 @@
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd Desktop\DJANGO
+
+C:\Users\user\Desktop\DJANGO>pipenv shell
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+(DJANGO-V0r3upEk) C:\Users\user\Desktop\DJANGO>django-admin startproject test_project .
+
+(DJANGO-V0r3upEk) C:\Users\user\Desktop\DJANGO>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+August 03, 2022 - 00:25:09
+Django version 4.0.6, using settings 'test_project.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[03/Aug/2022 00:25:18] "GET / HTTP/1.1" 200 10697
+[03/Aug/2022 00:25:19] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[03/Aug/2022 00:25:19] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[03/Aug/2022 00:25:19] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[03/Aug/2022 00:25:19] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+Not Found: /favicon.ico
+[03/Aug/2022 00:25:19] "GET /favicon.ico HTTP/1.1" 404 2116
+
+(DJANGO-V0r3upEk) C:\Users\user\Desktop\DJANGO>exit
+
+Aborted!
+
+C:\Users\user\Desktop\DJANGO>

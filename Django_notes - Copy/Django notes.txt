@@ -1,0 +1,309 @@
+cd Desktop\
+QueenSkye
+*CHAPTER ONE: Initial setup*
+----------------------------------------------------------------------------------------------------
+	The command line
+----------------------------------------------------------------------------------------------------
+
+- there are six possible commands used most frequently in Django development.
+• cd (change down a directory)
+• cd .. (change up a directory)
+• dir (list files in your current directory)
+• cd (print working directory)
+• mkdir (make directory)
+• type nul > filename (create a new file)
+
+----------------------------------------------------------------------------------------------------
+	Virtual environments
+----------------------------------------------------------------------------------------------------
+
+- virtual environments are an isolated container containing all the software dependencies for a given project.
+• install django in a folder using pipenv install django which automatically creates a virtual environment
+• activate the virtual environment using 'pipenv shell'
+
+- adding a dot (.) after django-admin startproject [projectname] makes the folder layout more organised
+- To stop our local server type Control+c. Then exit our virtual environment using the command exit.
+- We can always reactivate the virtual environment again using pipenv shell at any time.
+
+- It’s worth noting that only one virtual environment can be active in a command line tab at a time.
+
+----------------------------------------------------------------------------------------------------
+	Git
+----------------------------------------------------------------------------------------------------
+- Declaring the name and email address you want associated with all your Git commits
+$ git config --global user.name "Your Name"
+$ git config --global user.email "yourname@email.com"
+- You can always change these configs later if you desire by retyping the same commands with a new name or email 
+  address.
+
+
+*CHAPTER ONE: Hello World App*
+
+- If you use the tree command you can see what our Django project structure now looks like.
+
+- The settings.py file controls our project’s settings, 
+- urls.py tells Django which pages to build in response to a browser or URL request
+- wsgi.py, which stands for web server gateway interface, helps Django serve our eventual web pages. 
+- The manage.py is used to execute various Django commands such as running the local web server or creating a new app.
+
+- use python manage.py runserver to run your project on a local server
+
+----------------------------------------------------------------------------------------------------
+	Create an app	
+----------------------------------------------------------------------------------------------------
+
+- Django uses the concept of projects and apps to keep code clean and readable. A single Django project contains one
+  or more apps within it that all work together to power a web application.
+- use python manage.py startapp [appname] to start an app in your project
+
+• admin.py is a configuration file for the built-in Django Admin app
+• apps.py is a configuration file for the app itself
+• migrations/ keeps track of any changes to our models.py file so our database and models.py stay in sync
+• models.py is where we define our database models, which Django automatically translates into database tables
+• tests.py is for our app-specific tests
+• views.py is where we handle the request/response logic for our web app
+
+- Even though our new app exists within the Django project, Django doesn’t “know” about it until we explicitly add it.
+- Order matters for the INSTALLED_APPS setting which is why we place our application at the top. if several applications   try to access the same resource (template, static file, management command, translation) then the
+  application listed first has precedence. That’s what we want.
+
+----------------------------------------------------------------------------------------------------
+	Views and UrlConfs
+----------------------------------------------------------------------------------------------------
+
+- In Django, Views determine what content is displayed on a given page while URLConfs determine where that content is   going
+- When a user requests a specific page, like the homepage, the URLConf uses a regular expression to map that request to   the appropriate view function which then returns the correct data
+  *** In other words, our view will output the text “Hello, World” while our url will ensure that when the user visits        the homepage they are redirected to the correct view.***
+
+- When you type in a URL, such as https://djangoforbeginners.com the first thing that happens within our Django
+  project is a URLpattern is found that matches the homepage. The URLpattern specifies a view which then determines the   content for the page (usually from the database) and a template for styling. The end result is sent back to the user   as an HTTP response
+
+- Django request/response cycle
+  	URL -> View -> Model (typically) -> Template
+
+- the built-in HttpResponse method so we can return a response object to the user
+
+- URLpattern has three parts:
+• a Python regular expression for the empty string ''
+• specify the view which is called homePageView
+• add an optional URL name of 'home'
+
+- configure our project-level urls.py file since it’s common to have multiple apps within a single Django project, so   they each need their own route
+
+ 	*** 'project level' means the topmost, parent directory of an application/ or just inside your project
+	*** Once we are inside a specific app we are “app-level.”
+
+----------------------------------------------------------------------------------------------------
+	Git
+----------------------------------------------------------------------------------------------------
+
+- The first step is to initialize (or add) git to our repository using 'git init' whilst still in our virual environment
+- If you then type git status you’ll see a list of changes since the last git commit.
+- We next want to add all changes by using the command add -A and then commit the changes along with a message   describing what has changed.
+
+git fetch origin master
+git merge origin master
+
+git fetch origin master:tmp
+git rebase tmp
+git push origin HEAD:master
+git branch -D tmp
+----------------------------------------------------------------------------------------------------
+	Bit bucket
+----------------------------------------------------------------------------------------------------
+
+- It’s a good habit to create a remote repository of your code for each project. This way you have a backup in case   anything happens to your computer and more importantly, it allows for collaboration with other software developers.
+- to add your code to bitbucket :
+	git remote add origin git@bitbucket.org:<USER>/<reponame in bitbucket>.git
+
+
+
+----------------------------------------------------------------------------------------------------
+	Templates
+----------------------------------------------------------------------------------------------------
+
+- Every web framework needs a convenient way to generate HTML files. In Django, the approach is to use templates so that   individual HTML files can be served by a view to a web page specified by the URL.
+- The URLs control the initial route, the entry point into a page, such as /about, the views contain the logic or the     “what”, and the template has the HTML. For web pages that rely on a database model, it is the view that does much of   the work to decide what data is available to the template.
+
+-  By default, Django looks within each app for templates
+- This means we would need to create a new templates directory, a new directory with the name of the app, and finally   our template itself
+
+----------------------------------------------------------------------------------------------------
+	class based views
+----------------------------------------------------------------------------------------------------
+
+- When using Class-Based Views, you always add as_view() at the end of the view name.
+- Classes, unlike functions, should always be capitalized.
+
+----------------------------------------------------------------------------------------------------
+	Extending templates
+----------------------------------------------------------------------------------------------------
+
+- we, as developers, could have one canonical place for our header code that would be inherited by all other templates
+- Django has a minimal templating language for adding links and basic logic in our templates. Template tags take the   form of {% something %}
+
+- At the bottom we’ve added a block tag called content. Blocks can be overwritten by child templates via inheritance.     While it’s optional to name our closing endblock–you can just write {% endblock %} if you prefer–doing so helps with     readability, especially in larger template files.
+- we can reuse the same code from one template in another template. The Django templating language comes with an     extends method that we can use for this.
+
+----------------------------------------------------------------------------------------------------
+	Tests
+----------------------------------------------------------------------------------------------------
+
+- Writing tests is important because it automates the process of confirming that the code works as expected.
+- Automated tests let us write one time how we expect a specific piece of our project to behave and then let the   computer do the checking for us.
+
+- We’re using SimpleTestCase here since we aren’t using a database. If we were using a database, we’d instead use     TestCase. Then we perform a check if the status code for each page is 200, which is the standard response for a     successful HTTP request. That’s a fancy way of saying it ensures that a given webpage actually exists, but says
+  nothing about the content of said page.
+
+----------------------------------------------------------------------------------------------------
+	Deployment to heroku
+----------------------------------------------------------------------------------------------------
+
+We need to make the following four changes to our Pages project so it’s ready to deploy
+online with Heroku:
+• update Pipfile.lock
+• make a new Procfile file
+• install gunicorn as our web server
+• make aone-line change to settings.py fil
+
+• create a new app on Heroku and push our code to it
+• add a git remote “hook” for Heroku
+• configure the app to ignore static files, which we’ll cover in later chapters
+• start the Heroku server so the app is live
+• visit the app on Heroku’s provided URL
+
+
+----------------------------------------------------------------------------------------------------
+	Posts app
+----------------------------------------------------------------------------------------------------
+- execute the migrate command to create an initial database based on Django’s
+default settings
+
+----------------------------------------------------------------------------------------------------
+	activate a database model
+----------------------------------------------------------------------------------------------------
+
+- run python manage.py migrate before making your models to create an sql database beforehand
+- whenever we create or modify an existing model we’ll need to update Django in a two-step process.
+
+1. First we create a migration file with the makemigrations command which generate the SQL commands for preinstalled     apps in our INSTALLED_APPS setting. Migration files do not execute those commands on our database file, rather they     are a reference of all new changes to our models. This approach means that we have a record of the changes to our   models over time.
+2. Second we build the actual database with migrate which does execute the instructions in our migrations file.
+
+----------------------------------------------------------------------------------------------------
+	django admin
+----------------------------------------------------------------------------------------------------
+
+- Django provides us with a robust admin interface for interacting with our database.
+- To use the Django admin, we first need to create a superuser who can log in type python manage.py createsuperuser
+  (BoluProm25)
+- We need to explicitly tell Django what to display in the admin.
+-  It’s a best practice to add str() methods to all of your models to improve their readability.
+
+- django comes with a generic class 'list view' to list the objects in our database
+  the return variabke of list view is 'object view'
+
+
+TEST
+- But now that our homepage works with a database, we need to use TestCase which will let us create
+  a “test” database we can check against. In other words, we don’t need to run tests on our actual database but instead    can make a separate test database, fill it with sample data, and then test against it
+
+----------------------------------------------------------------------------------------------------
+	Database models
+----------------------------------------------------------------------------------------------------
+
+-  a ForeignKey which allows for a many-to-one relationship. This means that a given user can be the author of   many   different blog posts but not the other way around. The reference is to the built-in User model that Django
+  provides for authentication. For all many-to-one relationships such as a ForeignKey we must also specify an on_delete   option
+
+----------------------------------------------------------------------------------------------------
+	Static files
+----------------------------------------------------------------------------------------------------
+
+- create a project level 'static' folder with another folder nested in called css and a css file named base.css
+- We need to add the static files to our templates by adding {% load static %} to the top of base.html. Because our     other templates inherit from base.html we only have to add this once
+
+
+- our context object from DetailView is either our model name post or object
+- while we only declared the fields title, author, and body on our Post model, under-the-hood Django also added another    field called id, which is our primary key. We can access it as either id or pk.
+
+----------------------------------------------------------------------------------------------------
+	Django Forms
+----------------------------------------------------------------------------------------------------
+
+• Use HTML <form> tags with the POST method since we’re sending data. If we were
+receiving data from a form, for example in a search box, we would use GET.
+• Add a {% csrf_token %} which Django provides to protect our form from crosssite scripting attacks. You should use it for all your Django forms.
+• Then to output our form data we use {{ form.as_p }} which renders it within
+paragraph <p> tags.
+• Finally specify an input type of submit and assign it the value “Save”
+
+-  add a get_absolute_url to our model. This is a best practice that you should always do. It sets a canonical URL for   an object so even if the structure of your URLs changes in the future, the reference to the specific object
+is the same. In short, you should add a get_absolute_url() and __str__() method to each model you write
+- Reverse is a very handy utility function Django provides us to reference an object by its URL template name
+- the Django docs recommend using self.id with get_absolute_url. So we’re telling Django that the ultimate location of a   Post entry is its post_detail view w
+
+- We use reverse_lazy as opposed to just reverse so that it won’t execute the URL redirect until our view has finished   deleting the blog post.
+
+
+----------------------------------------------------------------------------------------------------
+	User Accounts
+----------------------------------------------------------------------------------------------------
+
+- we first need to update our project level urls with accounts/
+- by default Django will look within a templates folder called registration for a file called login.html for a log in     form. So we need to create a new directory called registration and the requisite file within it.
+
+- The order of our urls matters here because Django reads this file top-to-bottom. Therefore when we request them     /accounts/signup url, Django will first look in auth, not find it, and then proceed to the accounts app
+
+
+----------------------------------------------------------------------------------------------------
+	Custon user model
+----------------------------------------------------------------------------------------------------
+
+-  if you want to make any changes to the User model down the road using a custom user model from the beginning makes
+  this quite easy. But if you do not create a custom user model, updating the default User model in an existing Django   project is very, very challenging.
+
+- Creating our custom user model requires four steps:
+• update settings.py
+• create a new CustomUser model
+• update the admin
+• create new forms for UserCreationForm and UserChangeForm
+
+- In settings.py we’ll add the users app to our INSTALLED_APPS. Then at the bottom of the file use the AUTH_USER_MODEL     config to tell Django to use our new custom user model in place of the built-in User model. We’ll call our custom user   model CustomUser so, since it exists within our users app we refer to it as users.CustomUser
+
+• null is database-related. When a field has null=True it can store a database entry as NULL, meaning no value.
+• blank is validation-related, if blank=True then a form will allow an empty value, whereas if blank=False then a value   is required.
+- In practice, null and blank are commonly used together in this fashion so that a form allows an empty value and the   database stores that value as NULL.
+
+** Whenever you have a string-based field like CharField or TextField, setting both null and blank as we’ve done will     result in two possible values for “no data” in the database. Which is a bad idea. The Django convention is instead to    use the empty string '', not NULL.
+
+- there are two ideal times to add tests: either before you write any code (test-drivendevelopment) or immediately     after you’ve added new functionality and it’s clear in your mind.
+
+
+- for both pages we test three things:
+
+• the page exists and returns a HTTP 200 status code
+• the page uses the correct url name in the view
+• the proper template is being used
+
+- Our sign up page also has a form so we should test that, too. In the test test_signup_- form we’re verifying that when   a username and email address are POSTed (sent to the database), they match what is stored on the CustomUser model
+
+CRISPY FORMS 
+- install it in your project
+- add to your settings
+ First we load
+crispy_forms_tags at the top and then swap out {{ form.as_p }} for {{ form|crispy }}.
+
+
+- Authorization restricts access; authentication enables a user sign up and log in flow.\
+
+
+
+Forms
+Fundamentally a web form is simple: it takes user input and sends it to a URL via either a GET or POST method. However in practice this fundamental behavior of the web can be monstrously complex.
+
+The first issue is sending the form data: where does the data actually go and how do we handle it once there? Not to mention there are numerous security concerns whenever we allow users to submit data to a website.
+
+There are only two options for "how" a form is sent: either via GET or POST HTTP methods.
+
+A POST bundles up form data, encodes it for transmission, sends it to the server, and then receives a response. Any request that changes the state of the database--creates, edits, or deletes data--should use a POST.
+
+A GET bundles form data into a string that is added to the destination URL. GET should only be used for requests that do not affect the state of the application, such as a search where nothing within the database is changing, we're just doing a filtered list view basically.

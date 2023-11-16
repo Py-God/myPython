@@ -1,0 +1,32 @@
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd desktop
+
+C:\Users\user\Desktop>cd
+C:\Users\user\Desktop
+
+C:\Users\user\Desktop>mkdir new_folder
+
+C:\Users\user\Desktop>cd new_folder
+
+C:\Users\user\Desktop\new_folder>type nul > index.html
+
+C:\Users\user\Desktop\new_folder>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 8A85-BCBF
+
+ Directory of C:\Users\user\Desktop\new_folder
+
+08/02/2022  11:53 PM    <DIR>          .
+08/02/2022  11:53 PM    <DIR>          ..
+08/02/2022  11:53 PM                 0 index.html
+               1 File(s)              0 bytes
+               2 Dir(s)  86,640,467,968 bytes free
+
+C:\Users\user\Desktop\new_folder>cd ..
+
+C:\Users\user\Desktop>cd
+C:\Users\user\Desktop
+
+C:\Users\user\Desktop>

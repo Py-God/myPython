@@ -1,0 +1,8 @@
+- you would be able to pick between rock paper and scissors.
+  im thinking using dictionaries to assign 1,2,3 to rock, paper and scissors so you dont have to type it
+- compiter would immediately give choose their answer too.
+its a fast game
+
+- player chooses a number and is assigned the value of that number
+- computer also is assigned a random value 
+- write a series of statements to check the winner

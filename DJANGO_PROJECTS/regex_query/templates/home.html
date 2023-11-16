@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for text in object_list %}
+<div class="">
+  <h3><a href="{% url 'text_detail' text.pk %}">{{ text }}</a></h3>
+</div>
+{% endfor %}
+{% endblock content %}

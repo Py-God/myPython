@@ -1,0 +1,79 @@
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>cd Desktop\helloworld
+
+C:\Users\user\Desktop\helloworld>pipenv shell
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git init
+Initialized empty Git repository in C:/Users/user/Desktop/helloworld/.git/
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Pipfile
+        Pipfile.lock
+        db.sqlite3
+        helloworld_project/
+        manage.py
+        pages/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git add -A
+warning: in the working copy of 'Pipfile', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Pipfile.lock', LF will be replaced by CRLF the next time Git touches it
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git commit -m 'initial commit'
+error: pathspec 'commit'' did not match any file(s) known to git
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git commit -m "initial commit"
+[master (root-commit) c6d58a9] initial commit
+ 17 files changed, 292 insertions(+)
+ create mode 100644 Pipfile
+ create mode 100644 Pipfile.lock
+ create mode 100644 db.sqlite3
+ create mode 100644 helloworld_project/__init__.py
+ create mode 100644 helloworld_project/asgi.py
+ create mode 100644 helloworld_project/settings.py
+ create mode 100644 helloworld_project/urls.py
+ create mode 100644 helloworld_project/wsgi.py
+ create mode 100644 manage.py
+ create mode 100644 pages/__init__.py
+ create mode 100644 pages/admin.py
+ create mode 100644 pages/apps.py
+ create mode 100644 pages/migrations/__init__.py
+ create mode 100644 pages/models.py
+ create mode 100644 pages/tests.py
+ create mode 100644 pages/urls.py
+ create mode 100644 pages/views.py
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git remote add origin git@bitbucket.org:Boluwatife_/hello-world.git
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git remote add origin git@bitbucket.org:Boluwatife_/hello_world.git
+error: remote origin already exists.
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>git push -u origin master
+The authenticity of host 'bitbucket.org (104.192.141.1)' can't be established.
+RSA key fingerprint is SHA256:zzXQOXSRBEiUtuE8AikJYKwbHaxvSc0ojez9YXaGp1A.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'bitbucket.org' (RSA) to the list of known hosts.
+git@bitbucket.org: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>ssh -T hg@bitbucket.org
+Warning: Permanently added the RSA host key for IP address '104.192.141.1' to the list of known hosts.
+hg@bitbucket.org: Permission denied (publickey).
+
+(helloworld-aUljtJEw) C:\Users\user\Desktop\helloworld>

@@ -1,0 +1,6 @@
+what will this program do?
+- have a regex to identify urls with http:// or https://
+- find a way to shorten it by removing the http:// from the  beginning and the / at the end.
+  there should be a method to use.
+  store it in a list to print out. (use the email finder project as reference)
+  regex should be like r'https*://(w+)/'. the bracket could be taken as a group[1]? FIND OUT

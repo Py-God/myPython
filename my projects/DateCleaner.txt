@@ -1,0 +1,5 @@
+- identify dates in different formats 12/12/23 or 12-12-23 or 2015-3-14 and replace them with dates in a single standard format
+
+- create a regex to identify various date formats (use phonenumber regex as reference)
+- use findall to store in lists
+- use emailfinder regex as reference on how to sort them in a single format.

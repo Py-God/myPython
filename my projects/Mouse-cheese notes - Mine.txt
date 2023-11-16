@@ -1,0 +1,17 @@
+The game works so...
+- there would be a random word assigned per play. when you guess a word right from the word, the mouse moves closer to a target(cheese)
+  if you make a wrong guess, the mouse moves closer to a trap.
+
+- depending on the amount of letters in the word, the amount of tiles the mouse will move will be determined
+
+	Trap______mouse______cheese
+- right guess: Trap______mouse____cheese
+- wrong guess: Trap____mouse______cheese
+	The distance btw Trap and Cheese has to be like x2 of the len(word)
+this project is similar to the hangman project. You'll have to use it as a reference.
+
+
+
+				Actual code
+
+-  starting with the imports. i would choose random and time like the hangman

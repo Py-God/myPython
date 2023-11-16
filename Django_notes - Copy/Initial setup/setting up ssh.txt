@@ -1,0 +1,66 @@
+Microsoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\user/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\user/.ssh/id_rsa.
+Your public key has been saved in C:\Users\user/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:ZxuhVkicTVdxlJyUpCo7EXoY5Gn0PvzK8yEtXmuDUjE user@DESKTOP-0ACT4KD
+The key's randomart image is:
++---[RSA 3072]----+
+|       +.+. ..*=*|
+|      +.=...  .* |
+|       =.oo  .   |
+|      . *E...    |
+|       oSB*.     |
+|       ..+Bo     |
+|        .=o=     |
+|       .oo*oo    |
+|        .++o.    |
++----[SHA256]-----+
+
+C:\Users\user>eval (ssh-agent)
+'eval' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\user>start-ssh-agent
+Removing old ssh-agent sockets
+Starting ssh-agent:  done
+Enter passphrase for /c/Users/user/.ssh/id_rsa:
+Identity added: /c/Users/user/.ssh/id_rsa (user@DESKTOP-0ACT4KD)
+
+
+C:\Users\user>ssh-add /c/Users/user/.ssh/id_rsa
+Error connecting to agent: No such file or directory
+
+C:\Users\user> /C:/Users/user/.ssh/id_rsa
+The filename, directory name, or volume label syntax is incorrect.
+
+C:\Users\user>
+
+C:\Users\user>ssh-add C:/Users/user/.ssh/id_rsa
+Error connecting to agent: No such file or directory
+
+C:\Users\user>ssh-add C:\Users\user/.ssh/id_rsa
+Error connecting to agent: No such file or directory
+
+C:\Users\user>ssh-add C:/Users/user/.ssh/id_rsa
+Error connecting to agent: No such file or directory
+
+C:\Users\user>ssh-agent bash
+unable to start ssh-agent service, error :1058
+
+C:\Users\user>start ssh-agent
+
+C:\Users\user>start-ssh-agent
+Found ssh-agent at 11472
+Found ssh-agent socket at /tmp/ssh-ZokPfWZN1hmq/agent.1294
+
+C:\Users\user>ssh-add C:/Users/user/.ssh/id_rsa
+Error connecting to agent: No such file or directory
+
+C:\Users\user>

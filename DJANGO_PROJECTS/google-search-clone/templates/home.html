@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="get">{% csrf_token %}
+  <input type="search" name="search_bar" placeholder="Search...">
+  <input type="submit" value="Search">
+</form>
+{% endblock content %}
